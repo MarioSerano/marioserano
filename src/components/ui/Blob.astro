@@ -1,0 +1,22 @@
+---
+import variantOne from "../../assets/blob/variant_one.svg?raw";
+import variantTwo from "../../assets/blob/variant_two.svg?raw";
+import variantThree from "../../assets/blob/variant_three.svg?raw";
+
+type VariantType = "one" | "two" | "three";
+
+interface Props {
+  variant?: VariantType;
+  class?: string;
+}
+
+const { variant = "one" } = Astro.props;
+
+const mapVariantToBlob = {
+  one: variantOne,
+  two: variantTwo,
+  three: variantThree,
+};
+---
+
+<Fragment set:html={mapVariantToBlob[variant]} />

@@ -1,0 +1,25 @@
+---
+import CenterContainer from "../components/utils/CenterContainer.astro";
+import Button from "../components/ui/Button.astro";
+---
+
+<CenterContainer
+  outerContainerClass="absolute top-0 left-0 bg-primary-prussian-blue items-center h-18"
+  innerContainerClass="text-white items-center"
+>
+  <img src="/logo/logo-white.svg" alt="Mario" />
+  <div>
+    <ul class="items-center text-p2 font-bold space-x-10 hidden xl:flex">
+      <li>
+        <a href="#about">About</a>
+      </li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li>
+        <div class="h-6 min-h-[1.5rem] w-[1px] min-w-[1px] bg-white"></div>
+      </li>
+      <li><a href="#resume">Resume</a></li>
+      <li><Button>Hire me!</Button></li>
+    </ul>
+  </div>
+</CenterContainer>

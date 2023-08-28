@@ -1,0 +1,14 @@
+---
+const { outerContainerClass, innerContainerClass } = Astro.props;
+---
+
+<div class:list={["w-full flex justify-center", outerContainerClass]}>
+  <div
+    class:list={[
+      "w-full max-w-desktop px-layout flex justify-between",
+      innerContainerClass,
+    ]}
+  >
+    <slot />
+  </div>
+</div>

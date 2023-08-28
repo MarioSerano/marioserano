@@ -1,0 +1,50 @@
+---
+import Navbar from "./Navbar.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Frontend " />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Mario Serano | Frontend developer based on Jakarta, Indonesia</title>
+  </head>
+  <body>
+    <Navbar />
+    <main class="pt-18">
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Inter";
+    src: url("/fonts/Inter-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  html {
+    font-family: "Inter";
+  }
+</style>

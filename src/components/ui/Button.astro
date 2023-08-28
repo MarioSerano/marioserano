@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes } from "astro/types";
+type ButtonTheme = "primary" | "secondary";
+
+interface Props extends HTMLAttributes<"button"> {
+  theme?: ButtonTheme;
+}
+const { theme = "primary", class: className, ...other } = Astro.props;
+const mapThemeToClass = {
+  primary: "bg-primary-aquamarine text-primary-prussian-blue",
+  secondary:
+    "bg-transparent text-primary-aquamarine border border-solid border-primary-aquamarine",
+};
+---
+
+<button
+  class:list={[
+    "px-8 py-2 rounded-full font-bold text-p2",
+    mapThemeToClass[theme],
+    className,
+  ]}
+  {...other}
+>
+  <slot />
+</button>

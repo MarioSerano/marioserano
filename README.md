@@ -13,7 +13,7 @@
 
 - 📫 How to reach me **marioserano55@gmail.com**
 
-- 📄 Know about my experiences [https://drive.google.com/file/d/1oeoal3Nl_drodec735nIrVF_Cyu-4aKt/view?usp=drive_link](https://drive.google.com/file/d/1oeoal3Nl_drodec735nIrVF_Cyu-4aKt/view?usp=drive_link)
+- 📄 Know about my experiences [My Resume](https://drive.google.com/file/d/1oeoal3Nl_drodec735nIrVF_Cyu-4aKt/view?usp=drive_link)
 
 - ⚡ Fun fact **I learned React head first before JavaScript. I never regretted that decision because I'd hated JavaScript first.**
 

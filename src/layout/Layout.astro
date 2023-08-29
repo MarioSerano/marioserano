@@ -1,5 +1,6 @@
 ---
-import Navbar from "./Navbar.astro";
+import Navbar from "./Navbar";
+import Button from "../components/astro/ui/Button.astro";
 ---
 
 <!DOCTYPE html>
@@ -12,7 +13,9 @@ import Navbar from "./Navbar.astro";
     <title>Mario Serano | Frontend developer based on Jakarta, Indonesia</title>
   </head>
   <body>
-    <Navbar />
+    <Navbar client:load>
+      <Button class="w-full xl:w-[unset]">Hire me!</Button>
+    </Navbar>
     <main class="pt-18">
       <slot />
     </main>

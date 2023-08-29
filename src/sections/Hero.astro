@@ -2,8 +2,8 @@
 import { Image } from "astro:assets";
 
 import mainPic from "../assets/hero/main-pic.webp";
-import Button from "../components/ui/Button.astro";
-import Blob from "../components/ui/Blob.astro";
+import Button from "../components/astro/ui/Button.astro";
+import Blob from "../components/astro/ui/Blob.astro";
 ---
 
 <div class="w-full bg-primary-prussian-blue flex justify-center">
@@ -31,21 +31,25 @@ import Blob from "../components/ui/Blob.astro";
       <div
         class="w-full flex flex-col justify-center mt-[10.125rem] space-y-2 md:space-y-0 md:space-x-6 md:flex-row md:mt-6 xl:justify-start"
       >
-        <Button class="w-full">See my work</Button>
-        <Button class="w-full" theme="secondary">Contact me</Button>
+        <Button class="w-full md:w-[unset]">See my work</Button>
+        <Button class="w-full md:w-[unset]" theme="secondary">
+          Contact me
+        </Button>
       </div>
     </div>
     <div
       class="relative flex items-end min-h-[43.75rem] max-h-screen px-4 xl:flex-1 xl:flex-shrink-[0.3]"
     >
       <div class="absolute w-full h-full">
-        <div class="w-[18.75rem] z-10 absolute top-0 left-0">
+        <div class="absolute z-10 w-[150px] md:w-[300px] top-0 left-0">
           <Blob variant="one" />
         </div>
-        <div class="w-[31.25rem] absolute top-48 -left-20">
+        <div class="absolute w-[250px] md:w-[500px] top-48 -left-20">
           <Blob variant="two" />
         </div>
-        <div class="w-[31.25rem] absolute top-32 -right-28">
+        <div
+          class="absolute w-[250px] md:w-[500px] top-0 right-0 md:top-32 md:-right-28"
+        >
           <Blob variant="three" />
         </div>
       </div>

@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from "react";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { useWindowSize } from "usehooks-ts";
+
+import { useWindowSize } from "../hooks";
 import { layoutMaxScreenSize } from "../constants/tailwind";
 
 interface NavbarProps {

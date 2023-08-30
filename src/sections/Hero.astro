@@ -53,10 +53,12 @@ import Blob from "../components/astro/ui/Blob.astro";
           <Blob variant="three" />
         </div>
       </div>
-      <Image
-        class="absolute top-0 left-0 w-full z-10 h-full object-cover object-top"
-        src={mainPic}
+      <img
+        src={mainPic.src}
         alt="Mario Serano's Photo"
+        width={mainPic.width}
+        height={mainPic.height}
+        class="absolute top-0 left-0 w-full z-10 h-full object-cover object-top"
       />
     </div>
   </div>

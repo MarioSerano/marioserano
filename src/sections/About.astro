@@ -1,0 +1,81 @@
+---
+import GalleryMarquee from "../components/astro/ui/GalleryMarquee.astro";
+
+import sirkaMealGuideline from "../assets/about/sirka-meal-guideline.webp";
+import sirkaAboutUs from "../assets/about/sirka-about-us.webp";
+import sirkaLP from "../assets/about/sirka-lp.webp";
+import sirkaProgramList from "../assets/about/sirka-program-list.webp";
+import sirkaProductList from "../assets/about/sirka-product-list.webp";
+import compfestMainEventHero from "../assets/about/compfest-main-event-hero.webp";
+import compfestAcadHero from "../assets/about/compfest-acad-hero.webp";
+import compfestCompeAcadHero from "../assets/about/compfest-compe-acad-hero.webp";
+import compfestCompeHero from "../assets/about/compfest-compe-hero.webp";
+import compfestCompanyDetails from "../assets/about/compfest-company-details.webp";
+import compfestHRRecruitment from "../assets/about/compfest-hr-recruitment.webp";
+import compfestAcadLP from "../assets/about/compfest-acad-lp.webp";
+import compfestSeminarLP from "../assets/about/compfest-seminar-lp.webp";
+import compfestCompeLP from "../assets/about/compfest-compe-lp.webp";
+import compfestJobOpening from "../assets/about/compfest-job-opening.webp";
+
+const firstRow = [
+  { src: sirkaMealGuideline, alt: "Sirka, Meal Guideline Feature" },
+  { src: sirkaAboutUs, alt: "Sirka, About Us Page" },
+  { src: sirkaLP, alt: "Sirka, Landing Page" },
+  { src: sirkaProgramList, alt: "Sirka, Program List Feature" },
+  { src: sirkaProductList, alt: "Sirka, Product List Feature" },
+];
+
+const secondRow = [
+  { src: compfestMainEventHero, alt: "COMPFEST, Main Event Landing Page" },
+  { src: compfestAcadHero, alt: "COMPFEST, Academy Landing Page" },
+  {
+    src: compfestCompeAcadHero,
+    alt: "COMPFEST, Academy and Competition Landing Page",
+  },
+  { src: compfestCompeHero, alt: "COMPFEST, Competition Landing Page" },
+  { src: compfestCompanyDetails, alt: "COMPFEST, Company Details Feature" },
+];
+
+const thirdRow = [
+  { src: compfestHRRecruitment, alt: "COMPFEST, HR Recruitment Feature" },
+  { src: compfestAcadLP, alt: "COMPFEST, Academy Event Landing Page" },
+  { src: compfestSeminarLP, alt: "COMPFEST, Seminar Event Landing Page" },
+  { src: compfestCompeLP, alt: "COMPFEST, Competition Event Landing Page" },
+  { src: compfestJobOpening, alt: "COMPFEST, Job Opening Feature" },
+];
+---
+
+<div id="about" class="relative bg-primary-prussian-blue">
+  <div class="relative z-0 w-screen overflow-hidden space-y-5 md:space-y-6">
+    <GalleryMarquee images={firstRow} />
+    <GalleryMarquee
+      orientation="rtl"
+      childClass="first-of-type:pl-16"
+      images={secondRow}
+    />
+    <GalleryMarquee childClass="first-of-type:pl-6" images={thirdRow} />
+  </div>
+  <div
+    class="absolute z-10 top-0 left-0 px-4 w-full h-full flex justify-center items-center md:px-layout"
+  >
+    <div class="relative">
+      <div class="relative z-10">
+        <p class="font-bold text-white text-center text-p2 md:text-p1">
+          The most satisfying thing for me is to create visuals that make
+          people’s lives <span class="text-primary-aquamarine">easier</span>.
+        </p>
+        <p
+          class="font-bold text-white text-center mt-4 text-p2 md:text-p1 md:mt-1"
+        >
+          I can do that through building <span class="text-primary-aquamarine"
+            >websites</span
+          >.
+        </p>
+      </div>
+      <div
+        class="absolute w-full h-full top-0 left-0 rounded-full bg-primary-prussian-blue blur-3xl"
+      >
+      </div>
+    </div>
+  </div>
+</div>

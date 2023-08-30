@@ -1,0 +1,40 @@
+---
+import { Image } from "astro:assets";
+
+type ImageType = {
+  src: ImageMetadata;
+  alt: string;
+};
+
+type OrientationType = "ltr" | "rtl";
+
+interface Props {
+  images: Array<ImageType>;
+  orientation?: OrientationType;
+  childClass?: string;
+}
+const { images, orientation = "ltr", childClass = "" } = Astro.props;
+---
+
+<div
+  class:list={[
+    "w-full flex justify-center space-x-5",
+    orientation === "ltr"
+      ? "animate-slideLeftToRight"
+      : "animate-slideRightToLeft",
+  ]}
+>
+  {
+    Array(3)
+      .fill(images)
+      .flat()
+      .map(({ src, alt }) => (
+        <div class={childClass}>
+          <div class="relative rounded-[0.875rem] overflow-hidden w-[18.75rem] h-[12.5rem] md:w-[22.5rem] md:h-[15rem]">
+            <Image class="w-full h-full object-cover" src={src} alt={alt} />
+            <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50" />
+          </div>
+        </div>
+      ))
+  }
+</div>

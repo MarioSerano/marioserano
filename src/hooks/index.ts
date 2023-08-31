@@ -2,3 +2,4 @@
 export * from "./useIsomorphicLayoutEffect";
 export * from "./useEventListener";
 export * from "./useWindowSize";
+export * from "./useElementSize";

@@ -1,5 +1,5 @@
 ---
-import GalleryMarquee from "../components/astro/ui/GalleryMarquee.astro";
+import GalleryMarquee from "../components/react/ui/GalleryMarquee";
 
 import sirkaMealGuideline from "../assets/about/sirka-meal-guideline.webp";
 import sirkaAboutUs from "../assets/about/sirka-about-us.webp";
@@ -16,6 +16,7 @@ import compfestAcadLP from "../assets/about/compfest-acad-lp.webp";
 import compfestSeminarLP from "../assets/about/compfest-seminar-lp.webp";
 import compfestCompeLP from "../assets/about/compfest-compe-lp.webp";
 import compfestJobOpening from "../assets/about/compfest-job-opening.webp";
+import { Image } from "astro:assets";
 
 const firstRow = [
   { src: sirkaMealGuideline, alt: "Sirka, Meal Guideline Feature" },
@@ -47,13 +48,24 @@ const thirdRow = [
 
 <div id="about" class="relative bg-primary-prussian-blue">
   <div class="relative z-0 w-screen overflow-hidden space-y-5 md:space-y-6">
-    <GalleryMarquee images={firstRow} />
-    <GalleryMarquee
-      orientation="rtl"
-      childClass="first-of-type:pl-16"
-      images={secondRow}
-    />
-    <GalleryMarquee childClass="first-of-type:pl-6" images={thirdRow} />
+    <div>
+      <GalleryMarquee client:load images={firstRow} />
+    </div>
+    <div>
+      <GalleryMarquee
+        client:load
+        orientation="rtl"
+        childClass="first-of-type:pl-16"
+        images={secondRow}
+      />
+    </div>
+    <div>
+      <GalleryMarquee
+        client:load
+        childClass="first-of-type:pl-6"
+        images={thirdRow}
+      />
+    </div>
   </div>
   <div
     class="absolute z-10 top-0 left-0 px-4 w-full h-full flex justify-center items-center md:px-layout"

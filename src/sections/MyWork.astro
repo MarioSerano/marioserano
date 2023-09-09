@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+import myWork from "../assets/work/teamwork.webp";
+---
+
+<div class="sticky top-4 w-full bg-primary-prussian-blue py-12">
+  <div class="max-w-desktop w-full">
+    <div class="relative w-full h-full rounded-[0.625rem] overflow-hidden">
+      <Image class="w-full h-full object-cover" src={myWork} alt="My Work" />
+      <div
+        class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-layout"
+      >
+        <h2 class="text-h2 text-white font-bold">My Work</h2>
+        <p class="text-p2 text-white mt-4">
+          I&apos;ve worked both at a professional workplace, voluntary projects,
+          and also my own personal projects. <br />Scroll down to see the work
+          that I&apos;ve done!
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

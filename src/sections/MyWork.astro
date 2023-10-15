@@ -93,7 +93,7 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
       const scale = Math.max(1.25 - (currentScroll - start) / 600, 0.5);
       myWorkSectionScaleObj.style.transform = `scale(${scale})`;
       wasInViewport = true;
-    } else if (currentScroll <= start && wasInViewport) {
+    } else if (wasInViewport) {
       myWorkSectionScaleObj.style.transform = "";
       wasInViewport = false;
     }

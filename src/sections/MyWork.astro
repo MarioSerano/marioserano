@@ -94,7 +94,11 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
       myWorkSectionScaleObj.style.transform = `scale(${scale})`;
       wasInViewport = true;
     } else if (wasInViewport) {
-      myWorkSectionScaleObj.style.transform = "";
+      if (currentScroll <= start) {
+        myWorkSectionScaleObj.style.transform = "";
+      } else {
+        myWorkSectionScaleObj.style.transform = "scale(0.5)";
+      }
       wasInViewport = false;
     }
   });

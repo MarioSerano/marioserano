@@ -15,7 +15,7 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
         <div class="w-full h-full overflow-hidden">
           <div
             id="mywork-section__scale-object"
-            class="flex flex-col items-center scale-[1.185] z-10 top-0 left-0 w-full h-full"
+            class="flex flex-col items-center scale-[1.25] z-10 top-0 left-0 w-full h-full"
           >
             <div
               class="relative w-full scale-95 origin-bottom [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
@@ -56,6 +56,7 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
   const myWorkSectionScaleObj = document.getElementById(
     "mywork-section__scale-object"
   );
+  let wasInViewport = false;
   let coords: ReturnType<typeof getCoords>;
 
   function getCoords(elem: HTMLElement) {
@@ -89,8 +90,12 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
     const start = coords.top;
     const stop = coords.top + 200 * vh;
     if (currentScroll > start && currentScroll < stop) {
-      const scale = Math.max(1.18 - (currentScroll - start) / 600, 0.5);
+      const scale = Math.max(1.25 - (currentScroll - start) / 600, 0.5);
       myWorkSectionScaleObj.style.transform = `scale(${scale})`;
+      wasInViewport = true;
+    } else if (currentScroll <= start && wasInViewport) {
+      myWorkSectionScaleObj.style.transform = "";
+      wasInViewport = false;
     }
   });
 </script>

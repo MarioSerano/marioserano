@@ -5,7 +5,7 @@ import macbookScreen from "../assets/work/macbook-screen.svg?raw";
 import macbookBase from "../assets/work/macbook-base.svg?raw";
 ---
 
-<div id="mywork-section" class="min-h-[200vh] bg-primary-prussian-blue">
+<div id="mywork-section" class="min-h-[300vh] bg-primary-prussian-blue">
   <div
     class="sticky"
     style="top: calc((max(-862px, (-862/1366 * 100vw)) + 100vh)/2);"
@@ -88,9 +88,9 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
     const vh = window.innerHeight / 100;
     const currentScroll = document.documentElement.scrollTop;
     const start = coords.top;
-    const stop = coords.top + 200 * vh;
+    const stop = coords.top + 300 * vh;
     if (currentScroll > start && currentScroll < stop) {
-      const scale = Math.max(1.25 - (currentScroll - start) / 600, 0.5);
+      const scale = Math.max(1.25 - (currentScroll - start) / 1400, 0.5);
       myWorkSectionScaleObj.style.transform = `scale(${scale})`;
       wasInViewport = true;
     } else if (wasInViewport) {

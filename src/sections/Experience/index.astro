@@ -7,7 +7,7 @@ import SirkaExperienceItem from "./ExperienceItems/SirkaExperienceItem.astro";
   id="experience-section"
   class="relative w-full h-full max-w-full overflow-clip"
 >
-  <div class="absolute top-0 left-0 w-full h-[calc(100%-300px)]">
+  <div class="absolute z-0 top-0 left-0 w-full h-[calc(100%-300px)]">
     <div class="sticky top-0 left-0 w-full h-screen">
       <div class="absolute w-[30rem] h-[30rem] -top-[10rem] -right-[10rem]">
         <Blob variant="two" />
@@ -22,7 +22,9 @@ import SirkaExperienceItem from "./ExperienceItems/SirkaExperienceItem.astro";
       </div>
     </div>
   </div>
-  <SirkaExperienceItem />
-  <SirkaExperienceItem />
+  <div class="relative z-10">
+    <SirkaExperienceItem />
+    <SirkaExperienceItem />
+  </div>
   <div class="h-[300px]"></div>
 </div>

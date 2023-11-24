@@ -21,14 +21,12 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
             class="flex flex-col items-center scale-[1.25] z-10 top-0 left-0 w-full h-full"
           >
             <div
-              class="relative w-full scale-95 origin-bottom [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
+              class="relative w-full px-4 [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
             >
               <Fragment set:html={macbookScreen} />
-              <div
-                class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
-              >
+              <div class="absolute px-4 top-0 left-0 w-full h-full">
                 <Image
-                  class="w-full h-full object-cover"
+                  class="w-full h-full object-cover rounded-3xl"
                   src={myWork}
                   alt="My Work"
                 />

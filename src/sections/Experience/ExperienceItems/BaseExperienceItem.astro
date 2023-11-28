@@ -2,51 +2,74 @@
 import macbookScreen from "~/assets/work/macbook-screen.svg?raw";
 import macbookBase from "~/assets/work/macbook-base.svg?raw";
 import iphone from "~/assets/work/iphone.svg?raw";
-// interface Props {
-//   desktopImages: Array<ImageMetadata>;
-//   mobileImages: Array<ImageMetadata>;
-//   companyName: string;
-//   jobTitle: string;
-//   companyDescription: string;
-//   techstacks: Array<string>;
-//   workPeriod: {
-//     start: string;
-//     end: string;
-//   };
-//   caseStudyURL: string;
-// }
-
+import Button from "~/components/astro/ui/Button.astro";
+import ImageCarousel from "~/components/react/ui/ImageCarousel";
 interface Props {
-  id: string;
+  desktopImages: Array<ImageMetadata>;
+  mobileImages: Array<ImageMetadata>;
+  companyName: string;
+  jobTitle: string;
+  companyDescription: string;
+  techstacks: Array<string>;
+  workPeriod: {
+    start: string;
+    end: string;
+  };
+  caseStudyURL: string;
 }
 
-// const {
-//   desktopImages,
-//   mobileImages,
-//   companyName,
-//   jobTitle,
-//   companyDescription,
-//   techstacks,
-//   workPeriod,
-//   caseStudyURL,
-// } = Astro.props;
-const { id } = Astro.props;
+const {
+  desktopImages,
+  mobileImages,
+  companyName,
+  jobTitle,
+  companyDescription,
+  techstacks,
+  workPeriod,
+  caseStudyURL,
+} = Astro.props;
 ---
 
-<div class="w-full flex min-h-screen">
-  <div class="mx-auto max-w-[62rem] w-full">
-    <div class="flex justify-between items-start gap-4 px-4 py-8">
-      <div class="w-2/3">
-        <div class="flex flex-col items-center z-10 top-0 left-0 w-full h-full">
+<div>
+  <div class="min-h-screen"></div>
+  <div class="w-full flex min-h-[200vh]">
+    <div class="mx-auto sticky top-8 left-0 h-screen px-4 max-w-[62rem] w-full">
+      <div class="flex justify-between items-start gap-4">
+        <div class="w-2/3">
           <div
-            class="relative w-full px-4 [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
+            class="flex flex-col items-center z-10 top-0 left-0 w-full h-full"
           >
-            <Fragment set:html={macbookScreen} />
+            <div
+              class="relative w-full px-4 [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
+            >
+              <Fragment set:html={macbookScreen} />
+              <div
+                class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
+              >
+                <div
+                  class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-4 py-4"
+                >
+                  <ImageCarousel client:load images={desktopImages} />
+                </div>
+              </div>
+            </div>
+            <div class="w-full relative z-10 [&>svg]:w-full">
+              <Fragment set:html={macbookBase} />
+            </div>
+          </div>
+        </div>
+        <div class="w-[20%]">
+          <div
+            class="relative w-full h-full [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
+          >
+            <div>
+              <Fragment set:html={iphone} />
+            </div>
             <div
               class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
             >
               <div
-                class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-layout"
+                class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center"
               >
                 <p class="text-p3 text-black mt-4">
                   Some rotating images later (will probably use react here
@@ -55,29 +78,43 @@ const { id } = Astro.props;
               </div>
             </div>
           </div>
-          <div class="w-full relative z-10 [&>svg]:w-full">
-            <Fragment set:html={macbookBase} />
-          </div>
         </div>
       </div>
-      <div class="w-[20%]">
-        <div
-          class="relative w-full h-full [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
-        >
+      <div class="flex justify-between gap-4 mt-6">
+        <div class="flex-[0.66]">
           <div>
-            <Fragment set:html={iphone} />
+            <h2 class="text-h2 font-bold">{companyName}</h2>
+            <h5 class="text-h5 font-bold mt-2">{jobTitle}</h5>
+            <p class="text-p2 mt-2">
+              {companyDescription}
+            </p>
           </div>
-          <div
-            class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
-          >
-            <div
-              class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center"
-            >
-              <p class="text-p3 text-black mt-4">
-                Some rotating images later (will probably use react here later)
-              </p>
+          <div class="mt-3">
+            <h6 class="text-h6 font-bold">Techstacks</h6>
+            <div class="flex items-center gap-2 mt-1">
+              {
+                techstacks.map((techstack, index) => (
+                  <>
+                    <p>{techstack}</p>
+                    {index === techstacks.length - 1 ? null : (
+                      <div class="w-1 h-1 rounded-full bg-black" />
+                    )}
+                  </>
+                ))
+              }
             </div>
           </div>
+        </div>
+        <div class="flex-[0.33] flex flex-col justify-end items-end">
+          <div>
+            <h5 class="text-h5 text-right font-bold">Work period</h5>
+            <p class="text-p2 text-right mt-2">
+              {workPeriod.start}-{workPeriod.end}
+            </p>
+          </div>
+          <a href={caseStudyURL}>
+            <Button class="mt-9 mb-1">Case study</Button>
+          </a>
         </div>
       </div>
     </div>

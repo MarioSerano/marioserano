@@ -1,5 +1,44 @@
 ---
 import BaseExperienceItem from "./BaseExperienceItem.astro";
+
+import DesktopHeroSectionImage from "~/assets/experiences/sirka/desktop/hero-section.webp";
+import DesktopAboutUsImage from "~/assets/experiences/sirka/desktop/about-us.webp";
+import DesktopProgramListImage from "~/assets/experiences/sirka/desktop/program-list.webp";
+
+import MobileHeroSectionImage from "~/assets/experiences/sirka/mobile/hero-section.webp";
+import MobileAboutUsImage from "~/assets/experiences/sirka/mobile/about-us.webp";
+import MobileProgramListImage from "~/assets/experiences/sirka/mobile/program-list.webp";
+
+const desktopImages = [
+  DesktopHeroSectionImage,
+  DesktopAboutUsImage,
+  DesktopProgramListImage,
+];
+
+const mobileImages = [
+  MobileHeroSectionImage,
+  MobileAboutUsImage,
+  MobileProgramListImage,
+];
+
+const techstacks = [
+  "React",
+  "Next.js",
+  "Tanstack Query",
+  "Storybook",
+  "Rollup",
+  "Redux",
+  "Zustand",
+];
 ---
 
-<BaseExperienceItem />
+<BaseExperienceItem
+  desktopImages={desktopImages}
+  mobileImages={mobileImages}
+  jobTitle="Frontend Engineer"
+  caseStudyURL=""
+  companyName="Sirka"
+  companyDescription="Healthcare startup providing preventive health solutions through programs and products that are personally curated."
+  workPeriod={{ start: "July 2022", end: "February 2023" }}
+  techstacks={techstacks}
+/>

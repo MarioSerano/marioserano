@@ -50,6 +50,7 @@ function ImageCarousel(props: ImageCarouselProps) {
                 src={image.src}
                 width={image.width}
                 height={image.height}
+                className="min-h-full min-w-full object-cover"
                 key={index}
               />
             )

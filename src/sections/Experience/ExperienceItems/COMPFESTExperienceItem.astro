@@ -1,0 +1,38 @@
+---
+import BaseExperienceItem from "./BaseExperienceItem.astro";
+
+import DesktopMainEventImage from "~/assets/experiences/compfest/desktop/main-event.webp";
+import DesktopAcadCompeImage from "~/assets/experiences/compfest/desktop/acad-compe.webp";
+import DesktopJobDetailImage from "~/assets/experiences/compfest/desktop/job-detail.webp";
+
+import MobileBrowserHeaderImage from "~/assets/experiences/compfest/mobile/browser-header.png";
+import MobileMainEventImage from "~/assets/experiences/compfest/mobile/main-event.webp";
+import MobileAcadCompeImage from "~/assets/experiences/compfest/mobile/acad-compe.webp";
+import MobileJobDetailImage from "~/assets/experiences/compfest/mobile/job-detail.webp";
+
+const desktopImages = [
+  DesktopMainEventImage,
+  DesktopAcadCompeImage,
+  DesktopJobDetailImage,
+];
+
+const mobileImages = [
+  MobileMainEventImage,
+  MobileAcadCompeImage,
+  MobileJobDetailImage,
+];
+
+const techstacks = ["React", "Next.js", "GraphQL", "Apollo", "Hasura"];
+---
+
+<BaseExperienceItem
+  desktopImages={desktopImages}
+  mobileImages={mobileImages}
+  jobTitle="Vice Lead Software Engineer"
+  caseStudyURL=""
+  companyName="COMPFEST"
+  companyDescription="The most decorated IT event in Indonesia held by students of University of Indonesia that features seminars, competitions, academies, playground, and job fair."
+  workPeriod={{ start: "January 2021", end: "February 2022" }}
+  techstacks={techstacks}
+  browserHeader={MobileBrowserHeaderImage}
+/>

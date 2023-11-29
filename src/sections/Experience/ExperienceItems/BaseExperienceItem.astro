@@ -33,7 +33,6 @@ const {
 ---
 
 <div>
-  <div class="min-h-screen"></div>
   <div class="w-full flex min-h-[200vh]">
     <div class="mx-auto sticky top-8 left-0 h-screen px-4 max-w-[62rem] w-full">
       <div class="flex justify-between items-start gap-4">
@@ -49,7 +48,7 @@ const {
                 class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
               >
                 <div
-                  class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-4 py-4"
+                  class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-4 py-3"
                 >
                   <ImageCarousel client:load images={desktopImages} />
                 </div>
@@ -66,7 +65,7 @@ const {
           >
             <Fragment set:html={iphone} />
             <div
-              class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
+              class="absolute top-0 left-0 w-full h-full rounded-[2rem] overflow-hidden"
             >
               <div
                 class="absolute w-full h-full flex flex-col justify-center p-1 items-center top-0 left-0 text-center"

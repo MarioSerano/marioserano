@@ -16,6 +16,7 @@ interface Props {
     end: string;
   };
   caseStudyURL: string;
+  browserHeader: ImageMetadata;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   techstacks,
   workPeriod,
   caseStudyURL,
+  browserHeader,
 } = Astro.props;
 ---
 
@@ -62,19 +64,19 @@ const {
           <div
             class="relative w-full h-full [&>svg]:relative [&>svg]:z-10 [&>svg]:w-full [&>svg]:h-full"
           >
-            <div>
-              <Fragment set:html={iphone} />
-            </div>
+            <Fragment set:html={iphone} />
             <div
               class="absolute top-0 left-0 w-full h-full rounded-2xl overflow-hidden"
             >
               <div
-                class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center"
+                class="absolute w-full h-full flex flex-col justify-center p-1 items-center top-0 left-0 text-center"
               >
-                <p class="text-p3 text-black mt-4">
-                  Some rotating images later (will probably use react here
-                  later)
-                </p>
+                <img
+                  src={browserHeader.src}
+                  width={browserHeader.width}
+                  height={browserHeader.height}
+                />
+                <ImageCarousel client:load images={mobileImages} />
               </div>
             </div>
           </div>

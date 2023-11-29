@@ -1,0 +1,38 @@
+---
+import BaseExperienceItem from "./BaseExperienceItem.astro";
+
+import DesktopHeroSectionImage from "~/assets/experiences/sekelas/desktop/hero-section.webp";
+import DesktopTimelineImage from "~/assets/experiences/sekelas/desktop/timeline.webp";
+import DesktopForumImage from "~/assets/experiences/sekelas/desktop/forum.webp";
+
+import MobileBrowserHeaderImage from "~/assets/experiences/sekelas/mobile/browser-header.png";
+import MobileHeroSectionImage from "~/assets/experiences/sekelas/mobile/hero-section.webp";
+import MobileTimelineImage from "~/assets/experiences/sekelas/mobile/timeline.webp";
+import MobileForumImage from "~/assets/experiences/sekelas/mobile/forum.webp";
+
+const desktopImages = [
+  DesktopHeroSectionImage,
+  DesktopTimelineImage,
+  DesktopForumImage,
+];
+
+const mobileImages = [
+  MobileHeroSectionImage,
+  MobileTimelineImage,
+  MobileForumImage,
+];
+
+const techstacks = ["React", "Redux", "Django", "Amazon S3"];
+---
+
+<BaseExperienceItem
+  desktopImages={desktopImages}
+  mobileImages={mobileImages}
+  jobTitle="Fullstack Developer"
+  caseStudyURL=""
+  companyName="Sekelas"
+  companyDescription="A solution to share course notes within people in the campus, across all faculties and majors."
+  workPeriod={{ start: "January 2020", end: "November 2020" }}
+  techstacks={techstacks}
+  browserHeader={MobileBrowserHeaderImage}
+/>

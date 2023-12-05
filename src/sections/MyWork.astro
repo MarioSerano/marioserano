@@ -5,10 +5,7 @@ import macbookScreen from "../assets/work/macbook-screen.svg?raw";
 import macbookBase from "../assets/work/macbook-base.svg?raw";
 ---
 
-<div
-  id="mywork-section"
-  class="relative z-10 min-h-[300vh] bg-primary-prussian-blue"
->
+<div id="work" class="relative z-10 min-h-[300vh] bg-primary-prussian-blue">
   <div
     class="sticky"
     style="top: calc((max(-862px, (-862/1366 * 100vw)) + 100vh)/2);"
@@ -17,7 +14,7 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
       <div class="max-w-desktop w-full">
         <div class="w-full h-full overflow-hidden">
           <div
-            id="mywork-section__scale-object"
+            id="work__scale-object"
             class="flex flex-col items-center scale-[1.25] z-10 top-0 left-0 w-full h-full"
           >
             <div
@@ -53,10 +50,8 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
 </div>
 
 <script>
-  const myWorkSection = document.getElementById("mywork-section");
-  const myWorkSectionScaleObj = document.getElementById(
-    "mywork-section__scale-object"
-  );
+  const myWorkSection = document.getElementById("work");
+  const myWorkSectionScaleObj = document.getElementById("work__scale-object");
   let wasInViewport = false;
   let coords: ReturnType<typeof getCoords>;
 

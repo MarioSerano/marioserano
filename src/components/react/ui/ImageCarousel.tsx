@@ -30,7 +30,7 @@ function ImageCarousel(props: ImageCarouselProps) {
         setActiveImageIndex((prev) =>
           prev + 1 > images.length - 1 ? 0 : prev + 1
         ),
-      4000
+      2000
     );
     return () => clearInterval(intervalKey);
   }, []);

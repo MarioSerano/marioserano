@@ -1,0 +1,128 @@
+---
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"div"> {}
+
+const { class: className, ...other } = Astro.props;
+---
+
+<div
+  class={`leading-tight w-[17.1875rem] h-[5.625rem] flex flex-col items-center ${className}`}
+  {...other}
+>
+  <div style="width: 100%; height: 100%; position: relative;">
+    <div
+      style="left: 99px; top: 47px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; letter-spacing: 0.08px; word-wrap: break-word"
+    >
+      JavaScript
+    </div>
+    <div
+      style="left: 109px; top: 75px; position: absolute; text-align: center; color: black; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 0.06px; word-wrap: break-word"
+    >
+      TypeScript
+    </div>
+    <div
+      style="width: 83px; height: 20px; left: 98px; top: 23px; position: absolute"
+    >
+      <div
+        style="left: 0px; top: 0px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; letter-spacing: 0.08px; word-wrap: break-word"
+      >
+        HTML
+      </div>
+      <div
+        style="left: 50px; top: 0px; position: absolute; text-align: center; color: black; font-size: 16px; font-family: Inter; font-weight: 400; line-height: 20px; letter-spacing: 0.08px; word-wrap: break-word"
+      >
+        CSS
+      </div>
+    </div>
+    <div
+      style="left: 171px; top: 6px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Sass
+    </div>
+    <div
+      style="left: 116px; top: 0px; position: absolute; text-align: center; color: black; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 0.06px; word-wrap: break-word"
+    >
+      Tailwind
+    </div>
+    <div
+      style="left: 189px; top: 40px; position: absolute; text-align: center; color: black; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 0.06px; word-wrap: break-word"
+    >
+      Design System
+    </div>
+    <div
+      style="left: 57px; top: 40px; position: absolute; text-align: center; color: black; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 0.06px; word-wrap: break-word"
+    >
+      React
+    </div>
+    <div
+      style="left: 57px; top: 40px; position: absolute; text-align: center; color: black; font-size: 12px; font-family: Inter; font-weight: 400; line-height: 15px; letter-spacing: 0.06px; word-wrap: break-word"
+    >
+      React
+    </div>
+    <div
+      style="left: 0px; top: 64px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Tanstack<br />Query
+    </div>
+    <div
+      style="left: 15px; top: 30px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Next.js
+    </div>
+    <div
+      style="left: 0px; top: 47px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Gatsby.js
+    </div>
+    <div
+      style="left: 48px; top: 59px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      GraphQL
+    </div>
+    <div
+      style="left: 56px; top: 23px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Redux
+    </div>
+    <div
+      style="left: 193px; top: 23px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Storybook
+    </div>
+    <div
+      style="left: 189px; top: 59px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Bundlers
+    </div>
+    <div
+      style="left: 189px; top: 59px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Bundlers
+    </div>
+    <div
+      style="left: 179px; top: 76px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Rollup
+    </div>
+    <div
+      style="left: 217px; top: 76px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Webpack
+    </div>
+    <div
+      style="left: 69px; top: 6px; position: absolute; text-align: center; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Zustand
+    </div>
+    <div
+      style="left: 52px; top: 76px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      REST API
+    </div>
+    <div
+      style="left: 239px; top: 59px; position: absolute; color: black; font-size: 10px; font-family: Inter; font-weight: 400; line-height: 12.50px; letter-spacing: 0.05px; word-wrap: break-word"
+    >
+      Babel
+    </div>
+  </div>
+</div>

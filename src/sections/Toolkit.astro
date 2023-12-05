@@ -1,0 +1,26 @@
+---
+import DesktopWordCloud from "~/components/astro/ui/DesktopWordCloud.astro";
+import MobileWordCloud from "~/components/astro/ui/MobileWordCloud.astro";
+import toolkitSvg from "~/assets/toolkit/toolkit-image.svg?raw";
+---
+
+<div id="toolkit-section" class="w-full flex">
+  <div
+    class="px-4 mx-auto max-w-[48rem] w-full flex flex-col justify-center items-center"
+  >
+    <div>
+      <div class="w-full flex flex-col justify-center items-center">
+        <h2 class="text-h5 font-bold text-center md:text-h3">The toolkit</h2>
+        <p class="text-p3 mt-4 text-center md:mt-6 md:text-p2">
+          To make these websites, I use the best tools in the industry. <br
+            class="hidden sm:inline"
+          />
+           These are the tools I&apos;m most confident in using.
+        </p>
+        <DesktopWordCloud class="hidden mt-12 md:block" />
+        <MobileWordCloud class="block mt-8 md:hidden" />
+      </div>
+    </div>
+    <div class="w-[7.5rem] -mt-1 md:w-[25rem] md:-mt-8" set:html={toolkitSvg} />
+  </div>
+</div>

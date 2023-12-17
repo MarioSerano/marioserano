@@ -14,13 +14,13 @@ const Navbar: FC<NavbarProps> = (props) => {
 
   const { width } = useWindowSize();
 
-  const isMobile = width < 1200;
+  const isMobile = width && width < 1200;
 
   return (
-    <div className="absolute w-full top-0 left-0 flex justify-center items-center bg-primary-prussian-blue text-white h-18">
+    <div className="absolute left-0 top-0 flex h-18 w-full items-center justify-center bg-primary-prussian-blue text-white">
       <div className={layoutMaxScreenSize}>
         <img src="/logo/logo-white.svg" alt="Mario" />
-        <ul className="items-center text-p2 font-bold space-x-10 hidden xl:flex">
+        <ul className="hidden items-center space-x-10 text-p2 font-bold xl:flex">
           <li>
             <a href="#about">About</a>
           </li>
@@ -44,7 +44,7 @@ const Navbar: FC<NavbarProps> = (props) => {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger asChild>
               <button
-                className="rounded-full w-[35px] h-[35px] inline-flex items-center justify-center text-primary-prussian-blue bg-white shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-accents-columbia-blue focus:shadow-[0_0_0_2px] focus:shadow-black"
+                className="inline-flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-primary-prussian-blue shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-accents-columbia-blue focus:shadow-[0_0_0_2px] focus:shadow-black"
                 aria-label="Customise options"
               >
                 <HamburgerMenuIcon />
@@ -53,30 +53,30 @@ const Navbar: FC<NavbarProps> = (props) => {
 
             <DropdownMenu.Portal>
               <DropdownMenu.Content
-                className="min-w-[220px] bg-white rounded-md p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=top]:animate-slideDownAndFade data-[side=right]:animate-slideLeftAndFade data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade"
+                className="min-w-[220px] rounded-md bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
                 sideOffset={5}
               >
-                <DropdownMenu.Item className="group text-h6 leading-none text-primary-prussian-blue text-center font-bold rounded-[3px] flex items-center relative select-none outline-none data-[disabled]:text-neutral-grey data-[disabled]:pointer-events-none">
+                <DropdownMenu.Item className="group relative flex select-none items-center rounded-[3px] text-center text-h6 font-bold leading-none text-primary-prussian-blue outline-none data-[disabled]:pointer-events-none data-[disabled]:text-neutral-grey">
                   <a className="w-full px-[5px] py-4" href="#about">
                     About
                   </a>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className="group text-h6 leading-none text-primary-prussian-blue text-center font-bold rounded-[3px] flex items-center relative select-none outline-none data-[disabled]:text-neutral-grey data-[disabled]:pointer-events-none">
+                <DropdownMenu.Item className="group relative flex select-none items-center rounded-[3px] text-center text-h6 font-bold leading-none text-primary-prussian-blue outline-none data-[disabled]:pointer-events-none data-[disabled]:text-neutral-grey">
                   <a className="w-full px-[5px] py-4" href="#work">
                     Work
                   </a>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className="group text-h6 leading-none text-primary-prussian-blue text-center font-bold rounded-[3px] flex items-center relative select-none outline-none data-[disabled]:text-neutral-grey data-[disabled]:pointer-events-none">
+                <DropdownMenu.Item className="group relative flex select-none items-center rounded-[3px] text-center text-h6 font-bold leading-none text-primary-prussian-blue outline-none data-[disabled]:pointer-events-none data-[disabled]:text-neutral-grey">
                   <a className="w-full px-[5px] py-4" href="#skills">
                     Skills
                   </a>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className="group text-h6 leading-none text-primary-prussian-blue text-center font-bold rounded-[3px] flex items-center relative select-none outline-none data-[disabled]:text-neutral-grey data-[disabled]:pointer-events-none">
+                <DropdownMenu.Item className="group relative flex select-none items-center rounded-[3px] text-center text-h6 font-bold leading-none text-primary-prussian-blue outline-none data-[disabled]:pointer-events-none data-[disabled]:text-neutral-grey">
                   <a className="w-full px-[5px] py-4" href="#resume">
                     Resume
                   </a>
                 </DropdownMenu.Item>
-                <DropdownMenu.Item className="group text-[13px] leading-none text-primary-prussian-blue text-center rounded-[3px] flex items-center pt-2 relative select-none outline-none ">
+                <DropdownMenu.Item className="group relative flex select-none items-center rounded-[3px] pt-2 text-center text-[13px] leading-none text-primary-prussian-blue outline-none ">
                   <a className="w-full" href="#contact">
                     {buttonChildren}
                   </a>

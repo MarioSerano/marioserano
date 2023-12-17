@@ -41,7 +41,7 @@ const Navbar: FC<NavbarProps> = (props) => {
           </li>
         </ul>
         {width > 0 && isMobile ? (
-          <DropdownMenu.Root>
+          <DropdownMenu.Root modal={false}>
             <DropdownMenu.Trigger asChild>
               <button
                 className="inline-flex h-[35px] w-[35px] items-center justify-center rounded-full bg-white text-primary-prussian-blue shadow-[0_2px_10px] shadow-blackA7 outline-none hover:bg-accents-columbia-blue focus:shadow-[0_0_0_2px] focus:shadow-black"

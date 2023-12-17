@@ -4,30 +4,30 @@ import Button from "../components/astro/ui/Button.astro";
 import Blob from "../components/astro/ui/Blob.astro";
 ---
 
-<div class="w-full bg-primary-prussian-blue flex justify-center">
+<div class="flex w-full justify-center bg-primary-prussian-blue">
   <div
-    class="max-w-desktop w-full overflow-hidden flex flex-col px-0 md:px-layout xl:flex-row xl:h-[43.5rem] xl:space-x-9 xl:justify-between"
+    class="flex w-full max-w-desktop flex-col overflow-hidden px-0 md:px-layout xl:h-[43.5rem] xl:flex-row xl:justify-between xl:space-x-9"
   >
     <div
-      class="flex flex-col pt-56 items-center justify-between h-[40rem] pb-8 px-4 md:justify-start md:h-[unset] md:min-h-0 md:pb-20 md:pt-40 xl:pt-40 xl:items-start xl:flex-1 xl:flex-shrink-[0.7]"
+      class="flex flex-col items-center justify-between px-4 pb-4 pt-24 md:h-[unset] md:min-h-0 md:justify-start md:pb-20 md:pt-40 xl:flex-1 xl:flex-shrink-[0.7] xl:items-start xl:pt-40"
     >
-      <div class="text-white text-center xl:text-left">
-        <h1 class="font-bold text-h5 lg:text-h1">Mario Serano</h1>
+      <div class="text-center text-white xl:text-left">
+        <h1 class="text-h5 font-bold lg:text-h1">Mario Serano</h1>
         <p
-          class="flex items-center space-x-3 justify-center mt-2 md:mt-3 lg:text-p1 xl:justify-start"
+          class="mt-2 flex items-center justify-center space-x-3 md:mt-3 lg:text-p1 xl:justify-start"
         >
           <span class="min-w-max">frontend developer</span><span
-            class="w-1 h-1 min-w-[0.25rem] min-h-[0.25rem] rounded-full bg-white"
+            class="h-1 min-h-[0.25rem] w-1 min-w-[0.25rem] rounded-full bg-white"
           ></span><span class="min-w-max"
             >&#102;&#114;&#652;&#110;&#116;&#32;&#603;&#110;&#100;&#32;&#100;&#618;&#712;&#118;&#603;&#108;&#601;&#112;&#601;</span
           >
         </p>
-        <p class="text-p2 mt-4 lg:text-p1 md:mt-6">
+        <p class="mt-4 text-p2 md:mt-6 lg:text-p1">
           I build websites that works and looks stunning in all platforms.
         </p>
       </div>
       <div
-        class="w-full flex flex-col justify-center mt-[10.125rem] space-y-2 md:space-y-0 md:space-x-6 md:flex-row md:mt-6 xl:justify-start"
+        class="mt-16 flex w-full flex-col justify-center space-y-2 md:mt-6 md:flex-row md:space-x-6 md:space-y-0 xl:justify-start"
       >
         <Button class="w-full md:w-[unset]">See my work</Button>
         <Button class="w-full md:w-[unset]" theme="secondary">
@@ -36,17 +36,17 @@ import Blob from "../components/astro/ui/Blob.astro";
       </div>
     </div>
     <div
-      class="relative flex items-end min-h-[43.75rem] max-h-screen px-4 xl:flex-1 xl:flex-shrink-[0.3]"
+      class="relative flex max-h-screen min-h-[43.75rem] items-end px-4 xl:flex-1 xl:flex-shrink-[0.3]"
     >
-      <div class="absolute w-full h-full">
-        <div class="absolute z-10 w-[150px] md:w-[300px] top-0 left-0">
+      <div class="absolute h-full w-full">
+        <div class="absolute left-0 top-0 z-10 w-[150px] md:w-[300px]">
           <Blob variant="one" />
         </div>
-        <div class="absolute w-[250px] md:w-[500px] top-48 -left-20">
+        <div class="absolute -left-20 top-48 w-[250px] md:w-[500px]">
           <Blob variant="two" />
         </div>
         <div
-          class="absolute w-[250px] md:w-[500px] top-0 right-0 md:top-32 md:-right-28"
+          class="absolute right-0 top-0 w-[250px] md:-right-28 md:top-32 md:w-[500px]"
         >
           <Blob variant="three" />
         </div>
@@ -56,7 +56,7 @@ import Blob from "../components/astro/ui/Blob.astro";
         alt="Mario Serano's Photo"
         width={mainPic.width}
         height={mainPic.height}
-        class="absolute top-0 left-1/2 -translate-x-1/2 z-10 h-full object-top object-cover w-full md:object-bottom md:w-4/5 xl:object-top xl:object-cover xl:w-full"
+        class="absolute left-1/2 top-0 z-10 h-full w-full -translate-x-1/2 object-cover object-top md:w-4/5 md:object-bottom xl:w-full xl:object-cover xl:object-top"
       />
     </div>
   </div>

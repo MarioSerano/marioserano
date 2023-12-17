@@ -5,7 +5,10 @@ import macbookScreen from "../assets/work/macbook-screen.svg?raw";
 import macbookBase from "../assets/work/macbook-base.svg?raw";
 ---
 
-<div id="work" class="relative z-10 min-h-[300vh] bg-primary-prussian-blue">
+<div
+  id="work"
+  class="relative hidden z-10 bg-primary-prussian-blue min-h-[200vh] md:block lg:min-h-[300vh]"
+>
   <div
     class="sticky"
     style="top: calc((max(-862px, (-862/1366 * 100vw)) + 100vh)/2);"
@@ -30,8 +33,10 @@ import macbookBase from "../assets/work/macbook-base.svg?raw";
                 <div
                   class="absolute w-full h-full flex flex-col justify-center items-center top-0 left-0 text-center px-layout"
                 >
-                  <h2 class="text-h2 text-white font-bold">My Work</h2>
-                  <p class="text-p2 text-white mt-4">
+                  <h2 class="text-white font-bold text-h5 lg:text-h2">
+                    My Work
+                  </h2>
+                  <p class="text-white text-p3 mt-3 lg:mt-4 lg:text-p2">
                     I&apos;ve worked both at a professional workplace, voluntary
                     projects, and also my own personal projects. <br />Scroll
                     down to see the work that I&apos;ve done!

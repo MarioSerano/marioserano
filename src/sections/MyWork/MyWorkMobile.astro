@@ -14,7 +14,7 @@ import myWork from "~/assets/work/teamwork-mobile.webp";
         <div class="h-full w-full overflow-hidden">
           <div
             id="work-mobile__scale-object"
-            class="left-0 top-0 z-10 flex h-full w-full scale-[1.25] flex-col items-center"
+            class="left-0 top-0 z-10 flex h-full w-full scale-[1.25] transform flex-col items-center transition-transform will-change-transform"
           >
             <div
               class="relative h-full w-full [&>svg]:relative [&>svg]:z-10 [&>svg]:h-full [&>svg]:w-full"
@@ -50,6 +50,16 @@ import myWork from "~/assets/work/teamwork-mobile.webp";
 <script>
   let initialized = false;
 
+  function debounce(func: () => void, wait: number) {
+    let timeout: number;
+    return () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func();
+      }, wait);
+    };
+  }
+
   function initScrollHandler() {
     const myWorkSection = document.getElementById("work-mobile");
     const myWorkSectionScaleObj = document.getElementById(
@@ -82,7 +92,7 @@ import myWork from "~/assets/work/teamwork-mobile.webp";
       coords = getCoords(myWorkSection);
     });
 
-    document.addEventListener("scroll", (e) => {
+    function calculate() {
       if (!coords || !myWorkSectionScaleObj) return;
       const vh = window.innerHeight / 100;
       const currentScroll = document.documentElement.scrollTop;
@@ -90,7 +100,7 @@ import myWork from "~/assets/work/teamwork-mobile.webp";
       const stop = coords.top + 200 * vh;
       if (currentScroll > start && currentScroll < stop) {
         const scale = Math.max(1.25 - (currentScroll - start) / 1400, 0.5);
-        myWorkSectionScaleObj.style.transform = `scale(${scale})`;
+        myWorkSectionScaleObj.style.transform = `scale(${scale}) translateZ(0.01)`;
         wasInViewport = true;
       } else if (wasInViewport) {
         if (currentScroll <= start) {
@@ -100,7 +110,11 @@ import myWork from "~/assets/work/teamwork-mobile.webp";
         }
         wasInViewport = false;
       }
-    });
+    }
+
+    const debouncedCalculate = debounce(calculate, 15);
+
+    document.addEventListener("scroll", debouncedCalculate);
 
     initialized = true;
   }

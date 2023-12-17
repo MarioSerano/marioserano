@@ -24,20 +24,20 @@ const socials = [
 ];
 ---
 
-<div class="flex flex-col justify-center items-center mt-28 pb-24">
-  <div class="px-4 mx-auto max-w-[48rem] text-center">
-    <h2 class="text-h3 font-bold">Contact Information</h2>
-    <p class="mt-8">
+<div class="mt-28 flex flex-col items-center justify-center pb-24">
+  <div class="mx-auto max-w-[48rem] px-4 text-center">
+    <h2 class="text-h5 font-bold lg:text-h3">Contact Information</h2>
+    <p class="mt-4 text-p3 md:mt-8 lg:text-p2">
       I&apos;m currently are available for new opportunities!<br />If you have
       any questions or are looking to hire me, you can find me in my socials.
     </p>
   </div>
-  <div class="flex items-center mt-8 gap-8">
+  <div class="mt-8 flex items-center gap-4 md:gap-8">
     {
       socials.map((social) => (
         <a
           href={social.href}
-          class="w-20 h-20 hover:opacity-75"
+          class="h-12 w-12 hover:opacity-75 md:h-20 md:w-20"
           set:html={social.html}
         />
       ))

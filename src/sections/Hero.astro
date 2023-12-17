@@ -9,20 +9,20 @@ import Blob from "../components/astro/ui/Blob.astro";
     class="max-w-desktop w-full overflow-hidden flex flex-col px-0 md:px-layout xl:flex-row xl:h-[43.5rem] xl:space-x-9 xl:justify-between"
   >
     <div
-      class="flex flex-col pt-56 items-center justify-between h-[40rem] pb-8 px-4 md:justify-start md:h-[unset] md:min-h-0 md:py-40 xl:pt-40 xl:items-start xl:flex-1 xl:flex-shrink-[0.7]"
+      class="flex flex-col pt-56 items-center justify-between h-[40rem] pb-8 px-4 md:justify-start md:h-[unset] md:min-h-0 md:pb-20 md:pt-40 xl:pt-40 xl:items-start xl:flex-1 xl:flex-shrink-[0.7]"
     >
       <div class="text-white text-center xl:text-left">
-        <h1 class="font-bold text-h5 md:text-h1">Mario Serano</h1>
+        <h1 class="font-bold text-h5 lg:text-h1">Mario Serano</h1>
         <p
-          class="flex items-center space-x-3 justify-center mt-2 md:mt-3 md:text-p1 xl:justify-start"
+          class="flex items-center space-x-3 justify-center mt-2 md:mt-3 lg:text-p1 xl:justify-start"
         >
-          <span>frontend developer</span><span
+          <span class="min-w-max">frontend developer</span><span
             class="w-1 h-1 min-w-[0.25rem] min-h-[0.25rem] rounded-full bg-white"
-          ></span><span
+          ></span><span class="min-w-max"
             >&#102;&#114;&#652;&#110;&#116;&#32;&#603;&#110;&#100;&#32;&#100;&#618;&#712;&#118;&#603;&#108;&#601;&#112;&#601;</span
           >
         </p>
-        <p class="text-p2 mt-4 md:text-p1 md:mt-6">
+        <p class="text-p2 mt-4 lg:text-p1 md:mt-6">
           I build websites that works and looks stunning in all platforms.
         </p>
       </div>
@@ -56,7 +56,7 @@ import Blob from "../components/astro/ui/Blob.astro";
         alt="Mario Serano's Photo"
         width={mainPic.width}
         height={mainPic.height}
-        class="absolute top-0 left-0 w-full z-10 h-full object-cover object-top"
+        class="absolute top-0 left-1/2 -translate-x-1/2 z-10 h-full object-top object-cover w-full md:object-bottom md:w-4/5 xl:object-top xl:object-cover xl:w-full"
       />
     </div>
   </div>

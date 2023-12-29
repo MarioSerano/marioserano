@@ -16,7 +16,7 @@ import myWork from "~/assets/work/my-work-desktop.webp";
         <div class="h-full w-full overflow-hidden">
           <div
             id="work-desktop__scale-object"
-            class="left-0 top-0 z-10 flex h-full w-full scale-[1.25] flex-col items-center"
+            class="left-0 top-0 z-10 flex h-full w-full scale-110 flex-col items-center"
           >
             <Image src={myWork} alt="My Work" width={1366} height={923} />
           </div>
@@ -67,7 +67,7 @@ import myWork from "~/assets/work/my-work-desktop.webp";
         const start = coords.top;
         const stop = coords.top + 300 * vh;
         if (currentScroll > start && currentScroll < stop) {
-          const scale = Math.max(1.25 - (currentScroll - start) / 1400, 0.5);
+          const scale = Math.max(1.1 - (currentScroll - start) / 1400, 0.5);
           myWorkSectionScaleObj.style.transform = `scale(${scale})`;
           wasInViewport = true;
         } else if (wasInViewport) {

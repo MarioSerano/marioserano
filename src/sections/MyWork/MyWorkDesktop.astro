@@ -1,8 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import myWork from "~/assets/work/teamwork.webp";
-import macbookScreen from "~/assets/work/macbook-screen.svg?raw";
-import macbookBase from "~/assets/work/macbook-base.svg?raw";
+import myWork from "~/assets/work/my-work-desktop.webp";
 ---
 
 <div
@@ -20,105 +18,79 @@ import macbookBase from "~/assets/work/macbook-base.svg?raw";
             id="work-desktop__scale-object"
             class="left-0 top-0 z-10 flex h-full w-full scale-[1.25] flex-col items-center"
           >
-            <div
-              class="relative w-full px-4 [&>svg]:relative [&>svg]:z-10 [&>svg]:h-full [&>svg]:w-full"
-            >
-              <Fragment set:html={macbookScreen} />
-              <div class="absolute left-0 top-0 h-full w-full px-4">
-                <Image
-                  class="h-full w-full rounded-3xl object-cover"
-                  src={myWork}
-                  alt="My Work"
-                />
-                <div
-                  class="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center px-layout text-center"
-                >
-                  <h2 class="text-h5 font-bold text-white lg:text-h2">
-                    My Work
-                  </h2>
-                  <p class="mt-3 text-p3 text-white lg:mt-4 lg:text-p2">
-                    I&apos;ve worked both at a professional workplace, voluntary
-                    projects, and also my own personal projects. <br />Scroll
-                    down to see the work that I&apos;ve done!
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="relative z-10 -mt-1 w-full [&>svg]:w-full">
-              <Fragment set:html={macbookBase} />
-            </div>
+            <Image src={myWork} alt="My Work" width={1366} height={923} />
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  let initialized = false;
-  // MS: Scroll handlers
-  function initScrollHandler() {
-    const myWorkSection = document.getElementById("work-desktop");
-    const myWorkSectionScaleObj = document.getElementById(
-      "work-desktop__scale-object",
-    );
-    let wasInViewport = false;
-    let coords: ReturnType<typeof getCoords>;
+  <script>
+    let initialized = false;
+    // MS: Scroll handlers
+    function initScrollHandler() {
+      const myWorkSection = document.getElementById("work-desktop");
+      const myWorkSectionScaleObj = document.getElementById(
+        "work-desktop__scale-object",
+      );
+      let wasInViewport = false;
+      let coords: ReturnType<typeof getCoords>;
 
-    function getCoords(elem: HTMLElement) {
-      // crossbrowser version
-      var box = elem.getBoundingClientRect();
+      function getCoords(elem: HTMLElement) {
+        // crossbrowser version
+        var box = elem.getBoundingClientRect();
 
-      var body = document.body;
-      var docEl = document.documentElement;
+        var body = document.body;
+        var docEl = document.documentElement;
 
-      var scrollTop = window.scrollY || docEl.scrollTop || body.scrollTop;
-      var scrollLeft = window.scrollX || docEl.scrollLeft || body.scrollLeft;
+        var scrollTop = window.scrollY || docEl.scrollTop || body.scrollTop;
+        var scrollLeft = window.scrollX || docEl.scrollLeft || body.scrollLeft;
 
-      var clientTop = docEl.clientTop || body.clientTop || 0;
-      var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+        var clientTop = docEl.clientTop || body.clientTop || 0;
+        var clientLeft = docEl.clientLeft || body.clientLeft || 0;
 
-      var top = box.top + scrollTop - clientTop;
-      var left = box.left + scrollLeft - clientLeft;
+        var top = box.top + scrollTop - clientTop;
+        var left = box.left + scrollLeft - clientLeft;
 
-      return { top: Math.round(top), left: Math.round(left) };
+        return { top: Math.round(top), left: Math.round(left) };
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (!myWorkSection) return;
+        coords = getCoords(myWorkSection);
+      });
+
+      document.addEventListener("scroll", (e) => {
+        if (!coords || !myWorkSectionScaleObj) return;
+        const vh = window.innerHeight / 100;
+        const currentScroll = document.documentElement.scrollTop;
+        const start = coords.top;
+        const stop = coords.top + 300 * vh;
+        if (currentScroll > start && currentScroll < stop) {
+          const scale = Math.max(1.25 - (currentScroll - start) / 1400, 0.5);
+          myWorkSectionScaleObj.style.transform = `scale(${scale})`;
+          wasInViewport = true;
+        } else if (wasInViewport) {
+          if (currentScroll <= start) {
+            myWorkSectionScaleObj.style.transform = "";
+          } else {
+            myWorkSectionScaleObj.style.transform = "scale(0.5)";
+          }
+          wasInViewport = false;
+        }
+      });
+
+      initialized = true;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      if (!myWorkSection) return;
-      coords = getCoords(myWorkSection);
-    });
+    initScrollHandler();
 
-    document.addEventListener("scroll", (e) => {
-      if (!coords || !myWorkSectionScaleObj) return;
-      const vh = window.innerHeight / 100;
-      const currentScroll = document.documentElement.scrollTop;
-      const start = coords.top;
-      const stop = coords.top + 300 * vh;
-      if (currentScroll > start && currentScroll < stop) {
-        const scale = Math.max(1.25 - (currentScroll - start) / 1400, 0.5);
-        myWorkSectionScaleObj.style.transform = `scale(${scale})`;
-        wasInViewport = true;
-      } else if (wasInViewport) {
-        if (currentScroll <= start) {
-          myWorkSectionScaleObj.style.transform = "";
-        } else {
-          myWorkSectionScaleObj.style.transform = "scale(0.5)";
-        }
-        wasInViewport = false;
+    document.addEventListener("resize", () => {
+      if (window.innerWidth >= 768 && !initialized) {
+        initScrollHandler();
+      } else {
+        initialized = false;
       }
     });
-
-    initialized = true;
-  }
-
-  initScrollHandler();
-
-  document.addEventListener("resize", () => {
-    if (window.innerWidth >= 768 && !initialized) {
-      initScrollHandler();
-    } else {
-      initialized = false;
-    }
-  });
-</script>
+  </script>
+</div>

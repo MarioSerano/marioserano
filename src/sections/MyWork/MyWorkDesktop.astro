@@ -58,9 +58,10 @@ import myWork from "~/assets/work/my-work-desktop.webp";
       document.addEventListener("DOMContentLoaded", () => {
         if (!myWorkSection) return;
         coords = getCoords(myWorkSection);
+        calculate();
       });
 
-      document.addEventListener("scroll", (e) => {
+      function calculate() {
         if (!coords || !myWorkSectionScaleObj) return;
         const vh = window.innerHeight / 100;
         const currentScroll = document.documentElement.scrollTop;
@@ -78,7 +79,9 @@ import myWork from "~/assets/work/my-work-desktop.webp";
           }
           wasInViewport = false;
         }
-      });
+      }
+
+      document.addEventListener("scroll", calculate);
 
       initialized = true;
     }

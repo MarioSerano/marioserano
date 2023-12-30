@@ -4,23 +4,23 @@ import MobileWordCloud from "~/components/astro/ui/MobileWordCloud.astro";
 import toolkitSvg from "~/assets/toolkit/toolkit-image.svg?raw";
 ---
 
-<div id="skills" class="w-full flex">
+<div id="skills" class="mt-16 flex w-full md:mt-0">
   <div
-    class="px-4 mx-auto max-w-[48rem] w-full flex flex-col justify-center items-center"
+    class="mx-auto flex w-full max-w-[48rem] flex-col items-center justify-center px-4"
   >
     <div>
-      <div class="w-full flex flex-col justify-center items-center">
-        <h2 class="text-h5 font-bold text-center md:text-h3">The toolkit</h2>
-        <p class="text-p3 mt-4 text-center md:mt-6 md:text-p2">
+      <div class="flex w-full flex-col items-center justify-center">
+        <h2 class="text-center text-h5 font-bold md:text-h3">The toolkit</h2>
+        <p class="mt-4 text-center text-p3 md:mt-6 md:text-p2">
           To make these websites, I use the best tools in the industry. <br
             class="hidden sm:inline"
           />
            These are the tools I&apos;m most confident in using.
         </p>
-        <DesktopWordCloud class="hidden mt-12 md:block" />
-        <MobileWordCloud class="block mt-8 md:hidden" />
+        <DesktopWordCloud class="mt-12 hidden md:block" />
+        <MobileWordCloud class="mt-8 block md:hidden" />
       </div>
     </div>
-    <div class="w-[7.5rem] -mt-1 md:w-[25rem] md:-mt-8" set:html={toolkitSvg} />
+    <div class="-mt-1 w-[7.5rem] md:-mt-8 md:w-[25rem]" set:html={toolkitSvg} />
   </div>
 </div>

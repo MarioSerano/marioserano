@@ -36,6 +36,8 @@ const socials = [
     {
       socials.map((social) => (
         <a
+          target="_blank"
+          rel="noopener noreferrer"
           href={social.href}
           class="h-12 w-12 hover:opacity-75 md:h-20 md:w-20"
           set:html={social.html}

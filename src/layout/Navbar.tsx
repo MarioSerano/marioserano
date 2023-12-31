@@ -34,7 +34,13 @@ const Navbar: FC<NavbarProps> = (props) => {
             <div className="h-6 min-h-[1.5rem] w-[1px] min-w-[1px] bg-white"></div>
           </li>
           <li>
-            <a href="https://bit.ly/MarioResumeSE">Resume</a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://bit.ly/MarioResumeSE"
+            >
+              Resume
+            </a>
           </li>
           <li>
             <a href="#contact">{buttonChildren}</a>

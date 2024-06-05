@@ -1,7 +1,7 @@
 <h1 align="left">Hi 👋, I'm Mario Serano</h1>
 <h3 align="left">Frontend Developer that harness its curiousity into solving real-world problems!</h3>
 
-- 🔭 I’m currently working on [My Portfolio](https://github.com/marioserano/marioserano)
+- 🔭 I’m currently working in Bahasalab
 
 - 🌱 I’m currently learning **[Astro](https://astro.build/), [Next.js 13 React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components), [Data Structures and Algorithms](https://neetcode.io/)**
 
@@ -9,7 +9,7 @@
 
 - 🤝 I’m looking for help with **Data Structures and Algorithms**
 
-- 💬 Ask me about **React.js and Next.js 12**
+- 💬 Ask me about **React.js and Next.js**
 
 - 📫 How to reach me **marioserano55@gmail.com**
 

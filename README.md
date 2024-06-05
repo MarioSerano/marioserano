@@ -3,7 +3,7 @@
 
 - 🔭 I’m currently working in Bahasalab
 
-- 🌱 I’m currently learning **[Astro](https://astro.build/), [Next.js 13 React Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components), [Data Structures and Algorithms](https://neetcode.io/)**
+- 🌱 I’m currently learning **[Astro](https://astro.build/), [Data Structures and Algorithms](https://neetcode.io/)**
 
 - 👯 I’m looking to collaborate on **Open Source Projects!**
 

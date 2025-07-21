@@ -1,7 +1,7 @@
 <h1 align="left">Hi 👋, I'm Mario Serano</h1>
 <h3 align="left">Frontend Developer that harness its curiousity into solving real-world problems!</h3>
 
-- 🔭 I’m currently working in Bahasalab
+- 🔭 I’m currently working in Traveloka
 
 - 🌱 I’m currently learning **[Astro](https://astro.build/), [Data Structures and Algorithms](https://neetcode.io/)**
 
